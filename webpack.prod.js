@@ -15,7 +15,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                use: [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
             }
         ]
     },
@@ -32,6 +32,7 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-        })
+        }),
+        new MiniCssExtractPlugin({filename: '[name].css'})
     ]
 }
