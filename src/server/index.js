@@ -18,7 +18,7 @@ const apiKey = process.env.API_KEY;
 
 app.use(express.static('dist'));
 
-const projectData = {};
+let projectData = {};
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
@@ -28,13 +28,17 @@ app.get('/apiKey', function (req, res) {
   res.json(apiKey);
 });
 
-app.post('/addData', addData);
+app.get('/getData', function sendData(req, res) {
+  res.send(projectData)
+});
 
-function addData(req, res) {
+app.post('/addData', function addData(req, res) {
+  //build projectdata object here
+  console.log(req.body)
+  projectData.subjectivity = req.body.subjectivity
+  projectData.confidence = req.body.confidence
+});
 
-}
-
-// designates what port the app will listen to for incoming requests
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
 });

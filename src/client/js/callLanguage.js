@@ -1,23 +1,29 @@
 import { postData } from "./postData";
+import { getData } from "./getData";
 
-function checkLanguage(text, apiKey) {
-    const formdata = new FormData();
-    formdata.append("key", apiKey);
-    formdata.append("txt", text);
-    formdata.append("lang", "en");
+async function checkLanguage(text, apiKey) {
+  const req = await fetch(`https://api.meaningcloud.com/sentiment-2.1?lang=en&txt=${text}&key=${apiKey}`, {
+    method: 'GET'
+  });
+  try {
+    const data = await req.json()
+    console.log("Data:", data)
+    postData('/addData', { subjectivity: data.subjectivity, confidence: data.confidence});
+    updateUI()
+    return data
+} catch (e) {
+    console.log("error", e)
+}
+};
 
-    const requestOptions = {
-        method: 'POST',
-        body: formdata,
-        redirect: 'follow'
-    };
-
-    const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
-    .then(response => ({
-      body: response.json()
-    }))
-    .then((body) => postData('/addData', body))//add specific data i want to send to server here...
-    .catch(error => console.log('error', error));
+const updateUI = async () => {
+  const currentData = await getData('/getData');
+  const display = document.getElementById('results');
+  try {
+      display.innerHTML = "Subjectivity: " + currentData.subjectivity;
+  } catch (e) {
+      console.log("error", e)
+  }
 };
 
 export {checkLanguage};
