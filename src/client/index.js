@@ -5,5 +5,4 @@ const userText = document.getElementById('userText');
 document.getElementById('formSubmit').addEventListener('click', (e) => {
     e.preventDefault();
     callAPI()
-
 })

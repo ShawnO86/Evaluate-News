@@ -1,3 +1,5 @@
+import { postData } from "./postData";
+
 function checkLanguage(text, apiKey) {
     const formdata = new FormData();
     formdata.append("key", apiKey);
@@ -12,10 +14,9 @@ function checkLanguage(text, apiKey) {
 
     const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
     .then(response => ({
-      status: response.status, 
       body: response.json()
     }))
-    .then(({ status, body }) => console.log(status, body))
+    .then((body) => postData('/addData', body))//add specific data i want to send to server here...
     .catch(error => console.log('error', error));
 };
 
