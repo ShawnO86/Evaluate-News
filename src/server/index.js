@@ -3,6 +3,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 const dotenv = require('dotenv');
+//I've used Node version - 18.13.0 - for any dependancy issues!!!
 
 const app = express();
 app.use(cors());
