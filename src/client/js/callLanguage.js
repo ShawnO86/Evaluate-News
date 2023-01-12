@@ -7,7 +7,7 @@ async function checkLanguage(text, apiKey) {
   });
   try {
     const data = await req.json()
-    console.log("Data:", data)
+    console.log("Data from API:", data)
     postData('/addData', { subjectivity: data.subjectivity, confidence: data.confidence});
     updateUI()
     return data
