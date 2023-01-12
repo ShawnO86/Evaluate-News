@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
 
 dotenv.config();
 const apiKey = process.env.API_KEY;
+//API_KEY must be defined in project root within .env file!
 
 app.use(express.static('dist'));
 
@@ -33,12 +34,11 @@ app.get('/getData', function sendData(req, res) {
 });
 
 app.post('/addData', function addData(req, res) {
-  //build projectdata object here
   console.log(req.body)
   projectData.subjectivity = req.body.subjectivity
   projectData.confidence = req.body.confidence
 });
 
 app.listen(3000, function () {
-    console.log('Example app listening on port 3000!')
+    console.log('Meaning cloud API app listening on port 3000!')
 });
