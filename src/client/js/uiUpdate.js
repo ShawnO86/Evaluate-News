@@ -3,7 +3,10 @@ import { getData } from "./getData";
 const updateUI = async () => {
     //added the http://localhost:3000/route so I can run dev mode and express server 
     const currentData = await getData('http://localhost:3000/getData');
-    const display = document.getElementById('results');
+    const outputArea = document.getElementById('outputArea');
+    const display = document.createElement('div');
+    outputArea.appendChild(display);
+    display.setAttribute('id', "results");
     try {
         //printing results from express server projectData object
         display.innerHTML = `<strong>Results:</strong>
