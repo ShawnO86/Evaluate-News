@@ -2,6 +2,7 @@ import { checkLanguage } from "./callLanguage";
 
 const userText = document.getElementById('userText');
 const radioButtons = document.querySelectorAll('input[name="type"]');
+const resultNotify = document.getElementById('resultNotify');
 let type;
 
 function checkType() {
@@ -23,6 +24,7 @@ const callAPI = async () => {
             //check if user has input
             if (userText.value) {
                 checkLanguage(type, userText, key)
+                resultNotify.innerHTML = "<strong>&#8595 Evaluation Complete! &#8595</strong>"
             }
             else {
                 console.log("No text entered.")
