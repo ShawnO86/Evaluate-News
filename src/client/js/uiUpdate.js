@@ -5,6 +5,7 @@ const updateUI = async () => {
     const currentData = await getData('http://localhost:3000/getData');
     const display = document.getElementById('results');
     try {
+        //printing results from express server projectData object
         display.innerHTML = `<ul>
         <li>Text: ${currentData.text}</li>
         <li>Agreement: ${currentData.agreement}</li>
@@ -15,6 +16,6 @@ const updateUI = async () => {
     } catch (e) {
         console.log("error", e)
     }
-  };
+};
 
-  export { updateUI }
+export { updateUI }

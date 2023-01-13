@@ -14,8 +14,16 @@
 
         <section>
             <form>
-                <input type="text" name="input" placeholder="URL" id="userText">
-                <input type="submit" name="" value="submit" id="formSubmit">
+                <div class="choice">
+                    <label for="textSelect" class="radioLabel">Text</label>
+                    <input type="radio" name="type" value="txt" id="textSelect">
+                    <label for="urlSelect" class="radioLabel">URL</label>
+                    <input type="radio" name="type" value="url" id="urlSelect">
+                </div>
+                <div class="userInput">
+                    <input type="text" name="input" placeholder="URL" id="userText">
+                    <input type="submit" name="" value="submit" id="formSubmit">
+                </div>
             </form>
             <section>
 
@@ -23,7 +31,7 @@
                     <strong>Results:</strong>
                     <div id="results"></div>
                 </section>
-                
+
     </main>
 
 </body>
