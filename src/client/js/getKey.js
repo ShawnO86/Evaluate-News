@@ -18,7 +18,9 @@ const callAPI = async () => {
     const req = await fetch("http://localhost:3000/apiKey");
     try {
         const key = await req.json()
+        //check if type is selected
         if(type) {
+            //check if user has input
             if (userText.value) {
                 checkLanguage(type, userText.value, key)
             }
