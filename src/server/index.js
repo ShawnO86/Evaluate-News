@@ -23,7 +23,7 @@ app.use(express.static('dist'));
 let projectData = {};
 
 app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
+    res.sendFile('dist/index.html');
 });
 
 app.get('/apiKey', function (req, res) {
@@ -31,18 +31,18 @@ app.get('/apiKey', function (req, res) {
 });
 
 app.get('/getData', function sendData(req, res) {
-  res.send(projectData)
+  res.send(projectData);
 });
 
 app.post('/addData', function addData(req, res) {
-  console.log(req.body)
-  projectData.text = req.body.text
-  projectData.agreement = req.body.agreement
-  projectData.confidence = req.body.confidence
-  projectData.irony = req.body.irony
-  projectData.subjectivity = req.body.subjectivity
+  console.log(req.body);
+  projectData.text = req.body.text;
+  projectData.agreement = req.body.agreement;
+  projectData.confidence = req.body.confidence;
+  projectData.irony = req.body.irony;
+  projectData.subjectivity = req.body.subjectivity;
 });
 
 app.listen(3000, function () {
-    console.log('Meaning cloud API app listening on port 3000!')
+    console.log('Meaning cloud API app listening on port 3000!');
 });
