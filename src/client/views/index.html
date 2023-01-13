@@ -11,17 +11,24 @@
 <body>
 
     <main>
+        <header>
+            <h1>Natural Language Processing</h1>
+            <h2>Using the Meaningcloud Sentiment Analysis API</h2>
+        </header>
 
         <section>
             <form>
-                <div class="choice">
+
+                <div class="choice">                
+                    <h3>Input type:</h3>
                     <label for="textSelect" class="radioLabel">Text</label>
                     <input type="radio" name="type" value="txt" id="textSelect">
                     <label for="urlSelect" class="radioLabel">URL</label>
                     <input type="radio" name="type" value="url" id="urlSelect">
                 </div>
                 <div class="userInput">
-                    <input type="text" name="input" placeholder="URL" id="userText">
+                    <textarea type="text" name="input" placeholder="Enter your text or URL here" id="userText"
+                        rows="10"></textarea>
                     <input type="submit" name="" value="submit" id="formSubmit">
                 </div>
             </form>

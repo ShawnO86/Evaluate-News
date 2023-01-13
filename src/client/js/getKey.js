@@ -18,12 +18,18 @@ const callAPI = async () => {
     const req = await fetch("http://localhost:3000/apiKey");
     try {
         const key = await req.json()
-        if (userText.value) {
-            checkLanguage(type, userText.value, key)
+        if(type) {
+            if (userText.value) {
+                checkLanguage(type, userText.value, key)
+            }
+             else {
+                console.log("No text entered.")
+                alert("Please enter text to check.")
+            }
         } else {
-            alert("Please enter text to check.")
+            console.log("No type selected.")
+            alert("Please select an input type.")
         }
-
     } catch (error) {
         console.log("error", error)
     }
