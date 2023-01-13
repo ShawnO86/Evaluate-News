@@ -36,8 +36,11 @@ app.get('/getData', function sendData(req, res) {
 
 app.post('/addData', function addData(req, res) {
   console.log(req.body)
-  projectData.subjectivity = req.body.subjectivity
+  projectData.text = req.body.text
+  projectData.agreement = req.body.agreement
   projectData.confidence = req.body.confidence
+  projectData.irony = req.body.irony
+  projectData.subjectivity = req.body.subjectivity
 });
 
 app.listen(3000, function () {

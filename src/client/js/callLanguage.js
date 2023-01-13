@@ -8,19 +8,34 @@ async function checkLanguage(text, apiKey) {
   try {
     const data = await req.json()
     console.log("Data from API:", data)
-    postData('/addData', { subjectivity: data.subjectivity, confidence: data.confidence});
+
+    //added the http://localhost:3000/route so I can run dev mode and express server 
+    postData('http://localhost:3000/addData', { 
+      text: userText.value,
+      agreement: data.agreement,
+      confidence: data.confidence,
+      irony: data.irony,
+      subjectivity: data.subjectivity
+    });
+
     updateUI()
-    return data
 } catch (e) {
     console.log("error", e)
 }
 };
 
 const updateUI = async () => {
-  const currentData = await getData('/getData');
+  //added the http://localhost:3000/route so I can run dev mode and express server 
+  const currentData = await getData('http://localhost:3000/getData');
   const display = document.getElementById('results');
   try {
-      display.innerHTML = "Subjectivity: " + currentData.subjectivity;
+      display.innerHTML = `<ul>
+      <li>Text: ${currentData.text}</li>
+      <li>Agreement: ${currentData.agreement}</li>
+      <li>Confidence: ${currentData.confidence}</li>
+      <li>Irony: ${currentData.irony}</li>
+      <li>Subjectivity: ${currentData.subjectivity}</li>
+      </ul>`;
   } catch (e) {
       console.log("error", e)
   }

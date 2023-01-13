@@ -7,6 +7,10 @@ module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
     devtool: 'source-map',
+    output: {
+    //  clean-webpack-plugin will remove files inside the directory below
+        path: path.resolve(process.cwd(), 'dist')
+    },
     module: {
         rules: [
             {

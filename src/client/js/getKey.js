@@ -3,6 +3,7 @@ import { checkLanguage } from "./callLanguage";
 const userText = document.getElementById('userText');
 
 const callAPI = async () => {
+      //added the http://localhost:3000/route so I can run dev mode and express server 
     const req = await fetch("http://localhost:3000/apiKey");
     try {
         const key = await req.json()
