@@ -7,11 +7,11 @@ const updateUI = async () => {
     try {
         //printing results from express server projectData object
         display.innerHTML = `<ul>
-        <li>Text/URL: ${currentData.text}</li>
-        <li>Agreement: ${currentData.agreement}</li>
-        <li>Confidence: ${currentData.confidence}</li>
-        <li>Irony: ${currentData.irony}</li>
-        <li>Subjectivity: ${currentData.subjectivity}</li>
+        <li>Text/URL: <strong>${currentData.text}</strong></li>
+        <li>Agreement: <strong>${currentData.agreement}</strong></li>
+        <li>Confidence: <strong>${currentData.confidence}</strong></li>
+        <li>Irony: <strong>${currentData.irony}</strong></li>
+        <li>Subjectivity: <strong>${currentData.subjectivity}</strong></li>
         </ul>`;
     } catch (e) {
         console.log("error", e)

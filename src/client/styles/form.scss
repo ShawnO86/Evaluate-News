@@ -1,9 +1,13 @@
 .choice {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     column-gap: 2rem;
     margin-bottom: 2rem;
+}
+
+h3 {
+    text-align: center;
 }
 
 .userInput {
@@ -14,26 +18,29 @@
 }
 
 #formSubmit {
-    height: 2rem;
+    height: 3rem;
     background-color: rgb(125, 141, 156);
     border: none;
-    border-radius: 0.25rem;
     color: #f5f5f5;
     cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(51, 51, 51, 0.5);
 }
 
 #formSubmit:hover {
     background-color: rgb(79, 122, 163);
+    box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.25);
 }
 
 .radioHolder {
-    padding: 0.25rem 1rem;
-    border-radius: 0.25rem;
+    padding: 0;
     color: #f5f5f5;
+    height: 3rem;
+    width: 50%;
 }
 
 .radioHolder input[type="radio"] {
     appearance: none;
+    width: 100%;
 }
 
 .radioHolder input {
@@ -44,17 +51,27 @@
     color: #f5f5f5;
     padding: 1rem 2rem;
     box-shadow: 2px 2px 5px rgba(51, 51, 51, 0.5);
-    border-radius: 0.5rem;
-    width: 100%;
     text-align: center;
 }
 
 .radioHolder input:checked {
     box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.25);
     background-color: rgb(79, 122, 163);
+    z-index: 3;
 }
 
 .radioHolder input::before {
     content: attr(label);
     text-align: center;
 }
+
+@media only screen and (max-width: 450px) {
+    .choice {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 1rem;
+    }
+    .radioHolder {
+        width: 100%;
+    }
+  }
