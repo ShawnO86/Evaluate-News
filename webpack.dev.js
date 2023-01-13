@@ -8,7 +8,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     output: {
-    //  clean-webpack-plugin will remove files inside the directory below
+        //  clean-webpack-plugin will remove files inside the directory below
         path: path.resolve(process.cwd(), 'dist')
     },
     module: {
@@ -20,7 +20,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },

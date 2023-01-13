@@ -7,7 +7,7 @@ const updateUI = async () => {
     try {
         //printing results from express server projectData object
         display.innerHTML = `<ul>
-        <li>Text: ${currentData.text}</li>
+        <li>Text/URL: ${currentData.text}</li>
         <li>Agreement: ${currentData.agreement}</li>
         <li>Confidence: ${currentData.confidence}</li>
         <li>Irony: ${currentData.irony}</li>
