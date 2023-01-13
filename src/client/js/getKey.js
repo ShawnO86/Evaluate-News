@@ -5,11 +5,11 @@ const radioButtons = document.querySelectorAll('input[name="type"]');
 let type;
 
 function checkType() {
-    for(let radioButton of radioButtons) {
-      if(radioButton.checked){
-        type = radioButton.value;
-        break;
-      }
+    for (let radioButton of radioButtons) {
+        if (radioButton.checked) {
+            type = radioButton.value;
+            break;
+        }
     }
 }
 
@@ -19,12 +19,12 @@ const callAPI = async () => {
     try {
         const key = await req.json()
         //check if type is selected
-        if(type) {
+        if (type) {
             //check if user has input
             if (userText.value) {
-                checkLanguage(type, userText.value, key)
+                checkLanguage(type, userText, key)
             }
-             else {
+            else {
                 console.log("No text entered.")
                 alert("Please enter text to check.")
             }

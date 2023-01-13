@@ -19,17 +19,19 @@
         <section>
             <form>
 
-                <div class="choice">                
+                <div class="choice">
                     <h3>Input type:</h3>
-                    <label for="textSelect" class="radioLabel">Text</label>
-                    <input type="radio" name="type" value="txt" id="textSelect">
-                    <label for="urlSelect" class="radioLabel">URL</label>
-                    <input type="radio" name="type" value="url" id="urlSelect">
+                    <div class="radioHolder">
+                        <input type="radio" name="type" value="txt" label="Text" />
+                    </div>
+                    <div class="radioHolder">
+                        <input type="radio" name="type" value="url" label="URL">
+                    </div>
                 </div>
                 <div class="userInput">
                     <textarea type="text" name="input" placeholder="Enter your text or URL here" id="userText"
                         rows="10"></textarea>
-                    <input type="submit" name="" value="submit" id="formSubmit">
+                    <input type="submit" name="" value="Submit" id="formSubmit">
                 </div>
             </form>
             <section>
