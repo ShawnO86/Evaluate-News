@@ -11,7 +11,7 @@ async function checkLanguage(type, text, apiKey) {
     const data = await req.json()
     console.log("All data from API:", data)
     //added the http://localhost:3000/route so I can run dev mode and express server 
-    postData('/addData', {
+    postData('http://localhost:3000/addData', {
       text: userText.value,
       agreement: data.agreement,
       confidence: data.confidence,
