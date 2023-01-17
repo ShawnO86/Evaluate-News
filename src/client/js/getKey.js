@@ -12,10 +12,6 @@ function checkType() {
     }
 }
 
-function checkURL() {
-    const regex = new RegExp()
-}
-
 const callAPI = async () => {
     const userText = document.getElementById('userText');
     const resultNotify = document.getElementById('resultNotify');
