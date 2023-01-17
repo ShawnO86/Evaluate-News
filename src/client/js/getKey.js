@@ -1,11 +1,9 @@
 import { checkLanguage } from "./callLanguage";
 
-const userText = document.getElementById('userText');
-const radioButtons = document.querySelectorAll('input[name="type"]');
-const resultNotify = document.getElementById('resultNotify');
 let type;
 
 function checkType() {
+    const radioButtons = document.querySelectorAll('input[name="type"]');
     for (let radioButton of radioButtons) {
         if (radioButton.checked) {
             type = radioButton.value;
@@ -15,6 +13,8 @@ function checkType() {
 }
 
 const callAPI = async () => {
+    const userText = document.getElementById('userText');
+    const resultNotify = document.getElementById('resultNotify');
     //added the http://localhost:3000/route so I can run dev mode and express server 
     const req = await fetch("http://localhost:3000/apiKey");
     try {
