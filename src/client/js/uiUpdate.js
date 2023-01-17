@@ -7,6 +7,7 @@ const updateUI = async () => {
     const display = document.createElement('div');
     outputArea.appendChild(display);
     display.setAttribute('id', "results");
+    display.innerHTML = '';
     try {
         //printing results from express server projectData object
         display.innerHTML = `<strong>Results:</strong>
