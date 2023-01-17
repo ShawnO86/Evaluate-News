@@ -16,7 +16,7 @@ const callAPI = async () => {
     const userText = document.getElementById('userText');
     const resultNotify = document.getElementById('resultNotify');
     //added the http://localhost:3000/route so I can run dev mode and express server 
-    const req = await fetch("/apiKey");
+    const req = await fetch("http://localhost:3000/apiKey");
     try {
         const key = await req.json()
         //check if type is selected
