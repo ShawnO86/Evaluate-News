@@ -14,7 +14,7 @@ Node v18.13.0 \
 Express \
 Webpack with babel, html, and Sass loaders \
 Service workers \
-And learning unit testing with Jest 
+And learning very basic unit testing with Jest 
 
 
 
