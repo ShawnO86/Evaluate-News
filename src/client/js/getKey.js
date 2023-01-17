@@ -23,7 +23,8 @@ const callAPI = async () => {
         if (type) {
             //check if user has input
             if (userText.value) {
-                checkLanguage(type, userText, key)
+
+                checkLanguage(type, userText.value, key)
                 resultNotify.innerHTML = "<strong>&#8595 Evaluation Complete! &#8595</strong>"
             }
             else {

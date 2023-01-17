@@ -32,6 +32,7 @@ app.get('/apiKey', function (req, res) {
 
 app.get('/getData', function sendData(req, res) {
   res.send(projectData);
+
   projectData = {};
 });
 
